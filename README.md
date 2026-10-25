@@ -1,4 +1,5 @@
-# hokkien-wendu-poj
+# Pan-Min-Nan POJ diasystem auto-deriver
+## 泛閩南語白話字綜合音系自動推導器
 
 **An idealized literary (文讀) Hokkien reading for every Chinese character, written in Pe̍h-ōe-jī (POJ), derived from Middle Chinese.**
 〔以中古漢語（《廣韻》）推導的理想化閩南語文讀，用白話字書寫。〕
