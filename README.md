@@ -146,8 +146,16 @@ The figures in brackets are how many characters a source has readings for, and h
 
 ### Modern survey tables
 
-- **osfans (編). 2016-. 漢字音典 (MCPDict).** https://github.com/osfans/MCPDict , tools/tables/output/ . There are 24 modern Hokkien tables: Quanzhou group 泉州, 晉江, 南安, 永春, 德化, 惠安, 安溪, 金門 and 石獅; Amoy 厦門; Zhangzhou group 漳州, 長泰, 華安, 南靖, 漳浦, 雲霄, 東山, 詔安 and 平和; Taiwan 臺北, 嘉義, 澎湖 and 高雄; and 檳城 (Penang). Each table has 1,578 to 5,972 characters and its own 文/白 marks. A survey reading counts as literary when its table marks it 文, when it is historic, or when two tables agree. The surveys are what show which variety keeps which contrast: *io* in 泉州, 晉江, 南安 and 惠安; tone 6 in 泉州, 南安 and 惠安; *irn* in 南安, 惠安, 永春 and 德化; *iang* in 漳州, 漳浦, 東山, 華安, 南靖, 長泰, 雲霄 and 平和; *j* in Penang and Zhangzhou. The four Teochew tables (潮州, 汕頭, 揭陽, 潮陽) are used as evidence only: a syllable that Teochew has is never counted as wrong.
-- **mogher.com.** https://www.mogher.com/ . Teochew readings for 850 characters found nowhere else; one Teochew reading, 萬 buāng, was added by hand. Evidence only.
+- **osfans (編). 2016-. 漢字音典 (MCPDict).** https://github.com/osfans/MCPDict , tools/tables/output/ . There are 24 modern Hokkien tables: Quanzhou group 泉州, 晉江, 南安, 永春, 德化, 惠安, 安溪, 金門 and 石獅; Amoy 厦門; Zhangzhou group 漳州, 長泰, 華安, 南靖, 漳浦, 雲霄, 東山, 詔安 and 平和; Taiwan 臺北, 嘉義, 澎湖 and 高雄; and 檳城 (Penang). Each table has 1,578 to 5,972 characters and its own 文/白 marks. A survey reading counts as literary when its table marks it 文, when it is historic, or when two tables agree. The surveys are what show which variety keeps which contrast: *io* in 泉州, 晉江, 南安 and 惠安; tone 6 in 泉州, 南安 and 惠安; *irn* in 南安, 惠安, 永春 and 德化; *iang* in 漳州, 漳浦, 東山, 華安, 南靖, 長泰, 雲霄 and 平和; *j* in Penang and Zhangzhou. The four Teochew tables (潮州, 汕頭, 揭陽, 潮陽) are not a reference variety; see "How Teochew is used" below.
+- **mogher.com.** https://www.mogher.com/ . A Teochew pronunciation site. It gave Teochew readings for 850 characters that no other source has. Like all the Teochew data, it is not a reference variety: no rule follows it and no output syllable is taken from it (see below). One reading, 萬 buāng, was added by hand.
+
+**How Teochew is used.** Teochew is not a reference variety. No rule follows it, and no syllable the script outputs is taken from it. Its readings come from three places: the four MCPDict Teochew tables, Wiktionary, and mogher.com. They do three small things, all in checking the work:
+1. If a rule output is not a syllable any Hokkien source has, but Teochew has it and no Hokkien source contradicts it, the character is left to the rules and gets no exception.
+2. A Teochew reading can confirm an exception whose replacement has only one Hokkien source.
+3. A character with Teochew data but no Hokkien data can still be checked.
+
+The accuracy figures above count Hokkien readings only.
+
 
 ### Studies
 
