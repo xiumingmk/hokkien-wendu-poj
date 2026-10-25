@@ -2,24 +2,19 @@
  * Idealized literary (文讀) Hokkien in Pe̍h-ōe-jī, derived from Middle Chinese (tshet-uinh).
  * Framework: NK2028 tshet-uinh-deriver (tshet-uinh 0.15.x).
  *
- * DESIGN RULE
- *   A Middle Chinese contrast is kept if at least one reference variety keeps it, and is never
- *   invented otherwise. Reference varieties: Amoy, Taiwanese, Zhangzhou, Quanzhou, Penang,
- *   plus Lukang (鹿港) for tone 6. Chaozhou/Teochew and Hainanese are NOT references, but Teochew
- *   counts as evidence when checking: a syllable that Teochew has is never called wrong.
- *   The result is a mosaic, not one coherent dialect: the literary layers of the reference varieties
- *   were not borrowed as one system (楊秀芳 1982), so this is a diasystem, not a reconstruction of any
- *   single historical layer. Output is valid POJ with the usual
- *   extensions (o͘, ir, irn, eng/ek); tone 6 (全濁上) is written with a caron: ǎ ě ǐ ǒ ǔ.
- *   The tone is always the Middle Chinese class (清/濁 x 平上去入, 全濁上 = 6), also in the
- *   exceptions below: they replace the initial and final, never the tone.
- *   〔設計原則〕只要有任何一個參照方言保留某個《切韻》音系對立，就保留；絕不憑空創造對立。參照方言：廈門、臺灣、漳州、
- *   泉州、檳城，另以鹿港為全濁上（第六聲）的依據。潮州話與海南話不是參照，但潮州話可作檢驗證據：潮州話有的音節不算錯。
- *   結果是「鑲嵌」而非單一方言：各參照方言的文讀層並非一體借入（楊秀芳 1982），所以這是一個綜合音系（diasystem），不是
- *   任何單一歷史層次的重建。輸出為合法的白話字（POJ），並用慣例的擴充符號（o͘、ir、irn、eng/ek）；全濁上（第六聲）以抑揚符
- *   （caron）標示：ǎ ě ǐ ǒ ǔ。聲調一律取中古調類（清/濁 × 平上去入，全濁上 = 6），下方例外也一樣：例外只替換聲母與韻母，不動聲調。
+ * Documentation, sources, results and examples: https://github.com/xiumingmk/hokkien-wendu-poj
+ * 〔說明文件、來源、評測與例子：https://github.com/xiumingmk/hokkien-wendu-poj〕
  *
- * See README.md in the repository for a plain-language introduction. 〔白話介紹見倉庫中的 README.md。〕
+ * IN SHORT
+ *   A Middle Chinese contrast is kept if at least one reference variety keeps it (Amoy, Taiwanese, Zhangzhou,
+ *   Quanzhou, Penang; Lukang for tone 6), and never invented otherwise. Output is POJ with the usual extensions
+ *   (o͘, ir, irn, eng/ek). The tone is always the Middle Chinese class; 全濁上 is tone 6, written with a caron
+ *   (ǎ ě ǐ ǒ ǔ). Option 例外 (on by default) applies the exception list: about 216 characters whose rule output is
+ *   not a syllable any variety has get a real one (不 put, 大 tāi, 頭 thiô). It needs the 字頭; without it the rules decide.
+ *   〔簡述〕只要有任何一個參照方言（廈門、臺灣、漳州、泉州、檳城；第六聲另據鹿港）保留某個中古對立，就保留；絕不憑空創造。
+ *   輸出為白話字，含慣例擴充符號（o͘、ir、irn、eng/ek）。聲調一律取中古調類；全濁上為第六聲，以抑揚符標示（ǎ ě ǐ ǒ ǔ）。
+ *   選項「例外」（預設開）套用例外表：約 216 字的規則輸出不是任何方言真有的音節，改用真實音節（不 put、大 tāi、頭 thiô）；
+ *   需提供字頭，否則由規則決定。
  *
  * LICENSE
  *   MIT License. Copyright (c) 2026 樺修朙 (Maxim Klyashtornyy) and Claude (Anthropic).
@@ -48,170 +43,6 @@
  *   Data analysis, rule writing, exception list and tests: Claude (Anthropic), run through Claude Code.
  *   〔引用格式〕樺修朙、Claude（Anthropic）。2026。《理想化閩南語文讀（白話字）：由中古漢語推導——tshet-uinh 推導腳本》。
  *   設計原則、材料選擇與提供、審閱：樺修朙。資料分析、規則撰寫、例外表與測試：Claude（Anthropic），透過 Claude Code 執行。
- *
- * SOURCES (what the rule tables and the exception list were built from or checked against)
- *   Format: Author. Year. Title. Place: Publisher. Link. -- what it was used for.
- *   Entries marked [unchecked] give publication details from memory; the rest were checked against a title
- *   page, library record or the project page.
- *   〔來源〕以下列出規則表與例外表所據以建立或檢驗的資料。格式：作者。年份。題名。出版地：出版者。連結。——用途。
- *   標有 [unchecked] 者，出版資訊出自記憶、未經核對；其餘已對照書名頁、圖書館紀錄或專案頁面。
- *
- *   廣韻 data and framework
- *   nk2028. 2021-. tshet-uinh-js (npm: tshet-uinh 0.15.4) and the NK2028 deriver framework.
- *     https://github.com/nk2028/tshet-uinh-js . -- the 3804 小韻 positions every rule is written over.
- *   ——所有規則所依據的 3804 個小韻音韻地位。
- *
- *   Hokkien dictionaries (ChhoeTaigi database, https://github.com/ChhoeTaigi/ChhoeTaigiDatabase)
- *   Campbell, William (甘為霖). 1913. 廈門音新字典 ("甘字典"). Digitized and edited by 林俊育 (Lîm Chùn-io̍k).
- *     -- Amoy readings; its capitalized and 文 entries give literary readings.
- *   ——廈門音讀；其標示的文讀條目提供文讀音。
- *   小川尚義. 1931-32. 臺日大辭典. 臺北: 臺灣總督府 [unchecked]. Taigi translation and editing: 林俊育, as distributed by
- *     ChhoeTaigi ("台日大辭典 台譯版"). -- Taiwanese readings.
- *   ——臺灣音讀。（小川尚義，臺灣總督府，1931–32；臺譯與編輯：林俊育，由 ChhoeTaigi 釋出。）
- *   教育部. 2011-. 臺灣閩南語常用詞辭典. 臺北: 教育部. https://sutian.moe.edu.tw/ . -- Taiwanese readings; its (文) marks
- *     give literary readings.
- *   ——臺灣音讀；其（文）標記提供文讀音。
- *   Wiktionary contributors. Hokkien and Teochew pronunciation sections, single-character entries (Wiktextract JSON
- *     extract of the dump). https://en.wiktionary.org/ ; extractor: https://github.com/tatuylonen/wiktextract .
- *   （維基詞典貢獻者。閩南語與潮州話發音段落，單字條目，取自 Wiktextract JSON 擷取檔。）
- *
- *   Historic Hokkien
- *   謝秀嵐. 1818. 彙集雅俗通十五音. (Zhangzhou rime book) [unchecked]. Digitization used: AlanJui, ho-lok-ue-tools,
- *     https://github.com/AlanJui/ho-lok-ue-tools . -- Zhangzhou literary finals (姜字母 for 陽韻 -iang etc.).
- *   ——漳州文讀韻母（如陽韻 -iang 對應姜字母）。
- *   Douglas, Carstairs. 1873. Chinese-English Dictionary of the Vernacular or Spoken Language of Amoy. London:
- *     Trübner & Co. (checked: HathiTrust https://catalog.hathitrust.org/Record/001774286 ); supplement by Thomas Barclay,
- *     Shanghai: Commercial Press, 1923 (facsimile reprints: 臺北: 南天書局, 1990, ISBN 957-9482-32-2; 臺北: 古亭書屋, 1970). Digitization used: Community-Min-Language-Rime, Hokkien/Dictionary/Amoy.csv,
- *     https://github.com/Language-Preservation-Community/Community-Min-Language-Rime . -- Amoy reading pronunciations ("R.").
- *   ——廈門讀書音（「R.」標記）。
- *   Medhurst, Walter Henry. 1832. A Dictionary of the Hok-këèn Dialect of the Chinese Language, according to the Reading and
- *     Colloquial Idioms. Macao: Honorable East India Company's Press, by G. J. Steyn and Brother. (Catalogues give 1832 on the
- *     title page; the text of one record says 1837, the date MCPDict uses.) https://china-bibliographie.univie.ac.at/2010/04/17/medhurst-dictionary/
- *     Used through the MCPDict table "1837漳浦" (identified by name and date). -- Zhangpu.
- *   ——漳浦音（經 MCPDict「1837漳浦」表取得，以名稱與年代認定）。
- *   Chirino, Pedro. 1604. Dictionarium Sino-Hispanicum. Manila; manuscript, Biblioteca Angelica, Rome, Ms. 60 (see
- *     Klöter's survey of the Manila sources: https://www.benjamins.com/online/hl/articles/hl.00170.doh ). Used through
- *     the MCPDict table "1604馬尼拉漳州", which I identify with this work by its date. -- Zhangzhou speech of Manila.
- *     (Not the later anonymous Dictionario Hispanico Sinicum, c. 1626-46, held at the University of Santo Tomas.)
- *   ——馬尼拉漳州話（經 MCPDict「1604馬尼拉漳州」表取得，僅憑年代認定為此書；並非後來的匿名《Dictionario Hispanico Sinicum》，約 1626–46 年，藏聖托馬斯大學）。
- *   Macgowan, John. 1883. English and Chinese Dictionary of the Amoy Dialect. Amoy: London Missionary Society
- *     [publisher: unchecked; author and year: SOAS record https://library.soas.ac.uk/Record/PCE.FMC.3.03.01 ]. Used
- *     through the MCPDict table "1883厦門（英厦辭典）". -- Amoy.
- *   ——廈門音（經 MCPDict「1883厦門（英厦辭典）」表取得）。
- *   黃謙. 1800. 彙音妙悟. (Quanzhou rime book) [unchecked]. No machine-readable copy was used; read through 洪 1996 below.
- *   （《彙音妙悟》泉州韻書；未使用機讀副本，內容經由下列洪 1996 讀取。）
- *
- *   Modern survey tables
- *   osfans (編). 2016-. 漢字音典 (MCPDict). https://github.com/osfans/MCPDict , tools/tables/output/ . -- 24 modern Hokkien
- *     tables (泉州 晉江 南安 永春 德化 惠安 安溪 金門 石獅; 厦門; 漳州 長泰 華安 南靖 漳浦 雲霄 東山 詔安 平和; 臺北 嘉義 澎湖 高雄;
- *     檳城), with their own 文/白 marks; plus the four Teochew tables (潮州 汕頭 揭陽 潮陽), used as evidence only. A survey
- *     reading counts as literary when its table marks it 文, when it is historic, or when two tables agree.
- *   ——24 個現代閩南語表（泉州、晉江、南安、永春、德化、惠安、安溪、金門、石獅；廈門；漳州、長泰、華安、南靖、漳浦、雲霄、東山、詔安、平和；臺北、嘉義、澎湖、高雄；檳城）及自帶文白標記；另有四個潮州表（潮州、汕頭、揭陽、潮陽），僅作證據。某表的讀音若被該表標為文讀、屬歷史文獻，或有兩個表一致，即算文讀。
- *   mogher.com. https://www.mogher.com/ . -- Teochew readings for 850 characters found nowhere else (low-volume lookups);
- *     one Teochew reading, 萬 buāng, was added by hand.
- *   ——潮州話 850 個其他來源皆無的字的讀音（低頻查詢）；其中潮州話「萬 buāng」為手動補入。
- *
- *   Studies
- *   洪惟仁. 1996. 《彙音妙悟》與古代泉州音. 臺北: 國立中央圖書館臺灣分館 (審議: 何大安, 張光宇). ISBN 957-9067-99-6.
- *     -- the 文/白/正音 analysis of the 妙悟 rimes; page numbers in this file are this book's.
- *   ——《彙音妙悟》各韻的文／白／正音分析；本檔所注頁碼皆指此書頁碼。
- *   杜佳倫 (Tu, Chia-lun). 2011. 閩語歷史層次分析與相關音變探討 (The Diachronic Strata Analysis of Min Phonology).
- *     國立臺灣大學中國文學研究所博士論文 (advisor: 楊秀芳). https://tdr.lib.ntu.edu.tw/handle/123456789/9993 .
- *     -- literary-layer analysis (e.g. 1、2 等 merged as 洪音).
- *   ——文讀層分析（例如一、二等同讀洪音）。
- *   楊秀芳. 1982. 閩南語文白系統的研究. 國立臺灣大學博士論文 [unchecked: later published, 臺北: 臺灣學生書局, 1991].
- *     -- the 文白 system; its Quanzhou chapter is criticized in 洪 1996.
- *   ——文白系統研究；其泉州章節受到洪 1996 批評。（臺北：臺灣學生書局，1991 年出版為專書。）
- *   羅常培. 1930. 廈門音系. 中央研究院歷史語言研究所單刊甲種之二 [unchecked]; 1956 reprint, 北京: 科學出版社, used here
- *     (ch. V, 廣韻 comparison). -- check of the Amoy backbone.
- *   ——用以核對廈門音的骨幹（第五章，廣韻比較）。
- *   鹿港 tone 6 (全濁上): from the design brief (洪惟仁's work on Lukang); not re-derived from a table here.
- *   〔鹿港第六聲〕全濁上的第六聲依設計說明（洪惟仁對鹿港的研究）；本處未另由表重新推導。
- *
- *   Other data
- *   樺修朙 (Maxim Klyashtornyy) (編). 2024. 文言頻率詞典 (frequency dictionary, revision 2024-12-30), from a
- *     frequency count of the Chinese Text Project corpus (https://ctext.org ) by Reddit user LeatherButterfly4098, with help
- *     from justsilvestrein (CEAL Discord). -- classical-Chinese frequency ranks ("top 1000" etc. below); a
- *     character it does not list counts as rare. It replaced 泛亞漢文詞頻詞典 (汐洛思, https://github.com/ShiraTheMogul/fanyahanwen-corpus ),
- *     which ranks later, Buddhist, Japanese and simplified forms high (這 949 there, 8218 here; 了 381 / 3819; 爲 / 为 116 / 416).
- *   ——〔頻率〕樺修朙編《文言頻率詞典》（2024-12-30 版），據 Reddit 用戶 LeatherButterfly4098 對中國哲學書電子化計劃（ctext.org）全庫所作字頻統計
- *     製成，justsilvestrein 協助。用於文言字頻排名（下文「前 1000」等），未收之字視為罕用。取代《泛亞漢文詞頻詞典》，後者把後世、佛典、日本及
- *     簡化字形排得過前（這：949 對 8218；了：381 對 3819）。
- *   教育部. 異體字字典 (variant groups). https://dict.variants.moe.edu.tw/ . File obtained by 樺修朙 from the Ministry of
- *     Education for research; personal-use, not part of any public release. -- variant forms in the exception table
- *     (頭头, 歲岁), with Unicode Unihan simplified / traditional links (https://www.unicode.org/charts/unihan.html ).
- *   （教育部異體字字典，異體字組。檔案由樺修朙為研究目的向教育部取得；僅供個人使用，不屬於任何公開釋出內容。——用於例外表中的異體字，如 頭 头、歲 岁，並附 Unicode Unihan 簡繁連結。）
- *
- * WHAT THE MOSAIC ADDS (distinct syllables, out of 3804 廣韻 小韻)
- *   tone 6 for 全濁上 (Lukang, Quanzhou, Nan'an, Hui'an)                 +106
- *   陽韻 開口 = iang, kept apart from 東三/鍾 iong (Zhangzhou)             +61
- *   日母 = j, kept apart from 來母 l (Zhangzhou, Penang)                    +53
- *   魚韻 = ir, kept apart from 虞韻 u (Quanzhou ɯ, Zhangzhou i)              +47
- *   侯韻 = io, kept apart from 模韻 o͘ (Quanzhou)                            +43
- *   痕韻/殷韻 = irn, apart from 魂/文 un and 真 in (Quanzhou ɯn)             +23
- *   灰韻 = oe outside 端/精/來, apart from 微/脂 ui                          +10
- *   齊韻 幫組 = e, apart from 脂/支 i                                         +8
- *   侵韻 莊組 = om (箴 字母 of both rime books), apart from 侵 im              +8
- *   Total 1759 distinct syllables (1631 without iang / io / irn; 1396 for the original script).
- *   〔鑲嵌帶來的區別〕上表為各項增加的相異音節數（對 3804 個廣韻小韻）；合計 1759（不含 iang / io / irn 為 1631；原腳本為 1396）。
- *
- * HOW IT IS BUILT
- *   Initials (聲母表) and tones (聲調): hand-written tables. Finals (韻母表), first match wins:
- *   鑲嵌 (iang, io, irn) -> 手動 (hand rules that keep a contrast) -> 補充 (hand overrides of the generated table)
- *   -> 自動 (the modal 甘字典 literary final per 韻/呼/等/類, generated by gen_finals.py) -> 後備 (per-韻 fallback).
- *   例外 (option, on by default; off = pure rule output): about 216 characters (244 readings, 56 variant forms) whose rule
- *   output is not a syllable any Hokkien variety has get the nearest syllable one does have (頭 thiô, 米 bí, 歲 sòe, 大 tāi,
- *   不 put, 內 lōe ...). It needs the 字頭; without it the rules decide. Details of every rule are in the comments below.
- *   Rarer characters (outside the 3000 most frequent) get an exception only if the reading is attested outside the 十五音
- *   rime-book lineage (甘字典, 雅俗通, Medhurst, and Wiktionary, which often copies them): in MOE, 台日大辭典, Douglas, Macgowan,
- *   1604 Manila, or a modern survey. Otherwise the 反切 reading stands. Every remaining row was reviewed by hand (2026-10-25):
- *   colloquial words written with a rare character (尪 ang, 䭕 chia̍h), Mandarin-shaped readings (傻 sa) and variants of a
- *   character the rule already handles (猪 = 豬) were dropped.
- *   〔組成〕聲母表與聲調為手寫表。韻母依序比對（先中先用）：鑲嵌（iang、io、irn）→ 手動（保留對立的手寫規則）→ 補充（手寫覆蓋生成表）
- *   → 自動（甘字典每個韻／呼／等／類的最常見文讀韻母，由 gen_finals.py 生成）→ 後備（按韻）。例外（選項，預設開；關閉即純規則輸出）：
- *   約 216 字（244 個讀音、56 個異體字形），規則輸出不是任何閩南語方言真有的音節者，改用最近的真實音節；需提供字頭，否則由規則決定。
- *   前 3000 字以外的罕用字，只有在十五音韻書系統（甘字典、雅俗通、Medhurst，及常沿用它們的維基詞典）以外也有佐證時（教育部、台日大辭典、
- *   Douglas、Macgowan、1604 馬尼拉或現代調查）才列例外，否則採反切讀音。其餘每一列皆經人工審閱（2026-10-25）：刪去以罕用字書寫的白話詞
- *   （尪 ang、䭕 chia̍h）、帶華語色彩的讀音（傻 sa），以及規則已處理之字的異體（猪＝豬）。
- *
- * HOW WELL IT MATCHES
- *   7,683 characters with one 廣韻 reading and data in the dictionaries or the historic / survey sources. A match = the initial
- *   and the final each occur in some Hokkien reading of that character, tone ignored. Second figure also counts Teochew (only
- *   where no Hokkien source contradicts it).
- *                      all            top 1000       top 3000 (by classical-Chinese frequency)
- *   rules only         86.5 / 87.3    98.0 / 98.4    95.0 / 95.6
- *   with exceptions    88.5 / 89.2    100 / 100      98.1 / 98.4     (the exceptions were chosen from the same data: in-sample)
- *   Hold-out (finals table retrained on half the characters, rules only, scored on the other half): 86.1 / 87.0 (all),
- *   96.1 / 96.5 (top 1000), 89.0 / 90.0 (top 3000); the training half scores 85.6 / 86.3. The manual rules were chosen on all data.
- *   Against Amoy 甘字典 finals alone (held out): 91.7% without iang / io / irn, 87.1% with them (they deliberately differ from Amoy).
- *   〔吻合度〕7,683 個廣韻只有一讀、且在辭典或歷史／調查資料中有資料的字；吻合＝聲母與韻母各自出現在該字的某個閩南語讀音中（不計聲調），
- *   第二個數字另算潮州話（僅在無閩南語來源反對時）。例外是依同一批資料選出（樣本內）。留出測試：以一半字重訓韻母表，僅規則，在另一半字上
- *   測得 86.1／87.0（全部）、96.1／96.5（前 1000）、89.0／90.0（前 3000）；訓練半為 85.6／86.3。若只對照廈門甘字典韻母（留出）：
- *   不含 iang / io / irn 為 91.7%，含之為 87.1%（它們刻意異於廈門）。
- *
- * KNOWN LIMITS
- *   - Tone is the Middle Chinese class, so readings that moved to another tone series keep the MC tone: 係 hè (usual hē), 踏 thap
- *     (ta̍p), 站 chàm (chām), 沖 tiông (chhiong), 懈 hài (hāi).
- *   - Left to the rules on purpose: characters whose dictionary reading belongs to a variant or another word at another 音韻地位
- *     (粗 chǒ͘ beside chho͘, 唇, 玆, 庄, 鎗), and rare characters with a single source.
- *   - Still merged, because no listed variety separates them in literary readings or POJ cannot write the difference: 支/脂/之 (i),
- *     歌/豪 (o), 清/青/蒸/庚三 and 登/庚二/耕 (eng/ek), 仙/先 (ian), 覃/談 (am), 知=端 (t), 精=章=莊 (ch), 邪=心 (s), 侯 幫滂並 = 模 (o͘),
- *     真韻 B類 見組 = A類 (in), 止攝 精莊 = 虞 精莊 (u). Quanzhou 彙音妙悟 keeps 登/庚二/耕 apart (irng; 洪 1996: 106, 116, 127), but
- *     almost no one reads it so; an option 登庚 was tried and removed (cost 2 points of agreement).
- *   - Odd cases (齊韻 幫組 e only in 迷 謎 陛; 侯韻 io and 痕/殷 irn irregular in Quanzhou itself) are in the exception table.
- *   〔已知限制〕聲調取中古調類，轉入他調系列的讀音沿用中古調（係 hè、踏 thap、站 chàm、沖 tiông、懈 hài）。刻意交給規則：辭典讀音屬異讀或另一詞
- *   者（粗 chǒ͘、唇、玆、庄、鎗）及僅有單一來源的罕用字。仍合併者：沒有任何參照方言在文讀中區分，或 POJ 無法書寫其差別（支脂之、歌豪、
- *   清青蒸庚三與登庚二耕、仙先、覃談、知端、精章莊、邪心、侯幫滂並＝模、真韻 B／A 類、止攝精莊＝虞精莊）。《彙音妙悟》分開登／庚二／耕
- *   （irng），但幾乎無人如此讀，曾試選項「登庚」後移除（吻合度降 2 點）。個別不規則字（迷謎陛的 e、泉州自身不規則的 io／irn 字）列於例外表。
- *
- * API NOTES (verified against tshet-uinh 0.15.4)
- *   - 音韻地位.判斷(rules, throws): the SECOND argument is `throws`, not a default value; pass an error string so an uncovered
- *     音韻地位 fails loudly. A rule's result must not be an array (it would be read as a nested rule list).
- *   - Entering-tone (入聲) syllables carry the same 韻/等/呼 as their level-tone partners, so one table serves all four tones;
- *     the coda is converted afterwards. Labels must be traditional: 羣母 not 群母, 常母 not 禪母, 全濁/清音/濁音.
- *   - Options are listed when 音韻地位 is missing: ['key|label\ndescription', default]; the value arrives as 選項.key. 字頭 is the character as typed.
- *   〔API 備註〕判斷(rules, throws) 的第二參數是 throws，傳入錯誤字串可使未涵蓋地位明確報錯；規則結果不可為陣列；入聲與其平聲對應者的韻／等／呼相同，
- *   故一張表服務四聲，韻尾事後轉換；標籤須用繁體（羣母、常母、全濁／清音／濁音）；缺少音韻地位時列出選項 ['key|標籤\n說明', 預設值]，值以 選項.key 傳入。
  */
 
 const is = (...x) => 音韻地位.屬於(...x);
