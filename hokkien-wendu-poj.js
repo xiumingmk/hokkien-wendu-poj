@@ -4,6 +4,7 @@
  *
  * Documentation, sources, results and examples: https://github.com/xiumingmk/hokkien-wendu-poj
  * 〔說明文件、來源、評測與例子：https://github.com/xiumingmk/hokkien-wendu-poj〕
+ * Every line explained (Chinese): hokkien-wendu-poj.annotated.js 〔逐行中文註解本：hokkien-wendu-poj.annotated.js〕
  *
  * IN SHORT
  *   A Middle Chinese contrast is kept if at least one reference variety keeps it (Amoy, Taiwanese, Zhangzhou,

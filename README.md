@@ -120,6 +120,10 @@ for (const { 音韻地位 } of TshetUinh.資料.query字頭('頭'))
 
 **Output.** The output is POJ with the usual extensions: o͘, ir, irn, and eng/ek. Tones are 1 unmarked, 2 á, 3 à, 4 unmarked with -p/-t/-k/-h, 5 â, 6 ǎ, 7 ā, 8 a̍. The tone is always the Middle Chinese class (清/濁 × 平上去入), with 全濁上 as tone 6, so a word whose tone moved in a given variety keeps the Middle Chinese tone here (係 hè, where most varieties have hē).
 
+## The annotated copy
+
+`hokkien-wendu-poj.annotated.js` is the same script with a note in Chinese on every line of code. For every rule row it says what the row does and why, with the sources. It also gives what was measured: how many 小韻 the row decides, and what happens to them if that one row is deleted. Generated rows show their 甘字典 vote counts, and every exception row shows its 反切, the rule output, the replacement and the sources behind it. The header holds the decision log: what was tried, kept or dropped, with the numbers. The code is identical to the main script and so is the output; this was checked on every 小韻 and every character in the data, with the exception list on and off. If the two files ever disagree, the main script is the reference.
+
 ## Sources, and what each one contributed
 
 The figures in brackets are how many characters a source has readings for, and how many of the 244 exception readings it confirms. Entries marked [unchecked] give publication details from memory; the rest were checked against a title page, a library record or the project page.
@@ -193,7 +197,7 @@ Entering-tone syllables carry the same 韻/等/呼 as their level-tone partners,
 
 **Tones**: 清平 1, 濁平 5, 全濁上 6, other 上 2 (次濁上 joins 清上, as in every reference variety), 清去 3, 濁去 7, 清入 4, 濁入 8.
 
-**What each mosaic feature adds** (distinct syllables, out of 3,804 小韻): tone 6 +106; 陽 *iang* +61; 日 *j* +53; 魚 *ir* +47; 侯 *io* +43; 痕殷 *irn* +23; 灰 *oe* +10; 齊 幫組 *e* +8; 侵 莊組 *om* +8. The total is 1,759, or 1,631 without iang/io/irn. Scored against Amoy 甘字典 finals alone (held out), the finals match 91.7% without iang/io/irn and 87.1% with them. That 4.6-point drop is the price of keeping contrasts Amoy doesn't have.
+**What each mosaic feature adds** (distinct syllables, out of 3,804 小韻): tone 6 +106; 陽 *iang* +61; 日 *j* +49; 魚 *ir* +47; 侯 *io* +43; 痕殷 *irn* +23; 灰 *oe* +11; 齊 幫組 *e* +8; 侵 莊組 *om* +8. The total is 1,759, or 1,632 without iang/io/irn. Scored against Amoy 甘字典 finals alone (held out), the finals match 91.7% without iang/io/irn and 87.1% with them. That 4.6-point drop is the price of keeping contrasts Amoy doesn't have.
 
 **Still merged**, because no reference variety separates them in literary readings or POJ can't write the difference: 支/脂/之 (*i*), 歌/豪 (*o*), 清/青/蒸/庚三 and 登/庚二/耕 (*eng/ek*), 仙/先 (*ian*), 覃/談 (*am*), 知 = 端 (*t*), 精 = 章 = 莊 (*ch*), 邪 = 心 (*s*), 侯 幫滂並 = 模 (*o͘*), 真韻 B類 見組 = A類 (*in*), and 止攝 精莊 = 虞 精莊 (*u*).
 
