@@ -32,7 +32,7 @@
 | 日母 *j* 對 來母 *l* | 漳州、檳城 | 人 jîn ≠ 鄰 lîn |
 | 全濁上 第六聲 對 第七聲 | 鹿港、泉州、南安、惠安 | 是 sǐ ≠ 示 sī |
 | 灰韻 *oe* 對 微韻 *ui* | 漳州、泉州 | 灰 hoe ≠ 揮 hui |
-| 侵韻 莊組 *om* 對 侵韻 *im* | 兩部韻書（箴字母） | 森 som ≠ 心 sim |
+| 侵韻 莊組 *om* 對 侵韻 *im* | 雅俗通與彙音妙悟（箴字母） | 森 som ≠ 心 sim |
 
 在 3,804 個小韻上，這樣共得 1,759 個相異音節；早先以廈門為本的版本只有 1,396 個。結果不是任何一個真實存在的方言，也不是某一歷史層次的重建，因為各方言的文讀層並非作為一個整體系統借入（楊秀芳 1982）。但它所做的每一個區分，都是某處真實的說話者所做的區分。
 
@@ -53,6 +53,17 @@
 - 「最常用」依文言字頻排序。
 - 《廣韻》有多讀的字（不、大、長、行）不計分，因為哪個讀音正確要看上下文。計分的一讀字占實際行文的 71%。
 - 例外表是根據同一批資料選出的，所以第二列屬於樣本內數字。為了測試規則在沒看過的字上的表現，我們用一半的字重新生成韻母表，再拿另一半的字評分，結果是 86.1%（全部）、96.1%（最常用 1,000 字）、89.0%（最常用 3,000 字）；而在用來生成的那一半上是 85.6%。可見生成的韻母表並沒有過度擬合。
+
+## 十五音系統
+
+有四個來源同屬一個韻書系統，即漳州與廈門的十五音。本文稱此系統為**十五音系統**（英文為 rime-book tradition）：
+
+- 《彙集雅俗通十五音》（謝秀嵐，1818），漳州韻書
+- Medhurst 的 Hok-këèn 辭典（1832；使用的是 1837 漳浦表），依十五音編排
+- 《廈門音新字典》（甘為霖，1913），即甘字典，依同一系統編成
+- 維基詞典，常抄錄甘字典
+
+只有這四者支持的讀音，不算獨立佐證，不論它們多麼一致。系統以外的來源有：Douglas（1873）、Macgowan（1883）、1604 年馬尼拉紀錄、《臺日大辭典》、教育部、MCPDict 現代調查。《彙音妙悟》是另一個泉州韻書系統，不計入其內。
 
 ## 例外表修正什麼
 
@@ -86,9 +97,9 @@
 - **讀成它所代替的字。** 「寔」（實也；常職切，應讀 se̍k）記作 si̍t，是「實」的讀音。「寘」（置也；支義切，應讀 chì）記作 tì，是「置」的讀音。「沖」（直弓切，應讀 tiông）記作 chhiong，是與它常互通的「衝」的讀音。
 - **該字沒有任何來源記錄的鑲嵌韻母。** 882 個不吻合的字中，有 152 個用了鑲嵌韻母（ir、irn、iang、io、om），而這些字只在不區分該韻母的方言中有紀錄。例如「姤」推出 kiò，各來源記作 kò͘。
 
-罕用字的證據也很單薄。不吻合的罕用字中，有 72% 只見於韻書系統：雅俗通、Medhurst（依十五音編排），以及大多沿襲它們的甘字典與維基詞典。吻合的罕用字中，這個比例是 51%。另外，不吻合的罕用字有 45% 只有一個來源，吻合的罕用字則是 23%。
+罕用字的證據也很單薄。不吻合的罕用字中，有 72% 只見於十五音系統：雅俗通、Medhurst（依十五音編排），以及大多沿襲它們的甘字典與維基詞典。吻合的罕用字中，這個比例是 51%。另外，不吻合的罕用字有 45% 只有一個來源，吻合的罕用字則是 23%。
 
-所以例外表對罕用字特別嚴格。最常用的 3,000 字以外，只有當讀音在韻書系統以外也有佐證時（教育部辭典、臺日大辭典、Douglas、Macgowan、1604 年馬尼拉紀錄或現代調查），該字才列入例外。之後每一列都經過人工審閱，刪去以罕用字書寫的口語詞（尪 ang）、帶華語色彩的讀音（傻 sa），以及規則已處理之字的異體（猪＝豬）。其餘一律採用反切讀音。對於一個你很少會聽到人朗讀的字，合乎音系的讀音，比韻書可能自己也只是猜測的讀音，更值得採用。
+所以例外表對罕用字特別嚴格。最常用的 3,000 字以外，只有當讀音在十五音系統以外也有佐證時（教育部辭典、臺日大辭典、Douglas、Macgowan、1604 年馬尼拉紀錄或現代調查），該字才列入例外。之後每一列都經過人工審閱，刪去以罕用字書寫的口語詞（尪 ang）、帶華語色彩的讀音（傻 sa），以及規則已處理之字的異體（猪＝豬）。其餘一律採用反切讀音。對於一個你很少會聽到人朗讀的字，合乎音系的讀音，比十五音韻書可能自己也只是猜測的讀音，更值得採用。
 
 ## 使用方式
 
@@ -119,19 +130,19 @@ for (const { 音韻地位 } of TshetUinh.資料.query字頭('頭'))
 
 ### 閩南語辭典（經由 [ChhoeTaigi 資料庫](https://github.com/ChhoeTaigi/ChhoeTaigiDatabase)）
 
-- **Campbell, William（甘為霖）. 1913. 廈門音新字典（「甘字典」）.** 林俊育（Lîm Chùn-io̍k）數位化與編輯。[11,163 字；佐證 219 個例外讀音] 這是全案的骨幹。生成韻母表（177 列）就是甘字典中每個韻／呼／等／類組合最常見的文讀韻母；其大寫及標「文」的條目標出文讀音。由於它大量取材自韻書系統，所以不算罕用字的獨立佐證。
-- **小川尚義. 1931-32. 臺日大辭典.** 臺北：臺灣總督府 [unchecked]。臺譯與編輯：林俊育，由 ChhoeTaigi 釋出（「台日大辭典 台譯版」）。[3,481；90] 1930 年代記錄的臺灣讀音，也是罕用字的獨立佐證。
-- **教育部. 2011-. 臺灣閩南語常用詞辭典.** 臺北：教育部。https://sutian.moe.edu.tw/ 。[3,744；117] 當代臺灣讀音；其（文）標記用來區分文白，也是罕用字的獨立佐證。
-- **維基詞典貢獻者. 閩南語與潮州話發音段落**，單字條目（Wiktextract 傾印檔 JSON 擷取）。https://en.wiktionary.org/ ；擷取工具：https://github.com/tatuylonen/wiktextract 。[閩南語 6,171；151] 填補空缺，並提供大部分的潮州話證據。它常抄錄甘字典，所以歸入韻書系統。
+- **Campbell, William（甘為霖）. 1913. 廈門音新字典（「甘字典」）.** 林俊育（Lîm Chùn-io̍k）數位化與編輯。[11,163 字；佐證 219 個例外讀音] 這是全案的骨幹。生成韻母表（177 列）就是甘字典中每個韻／呼／等／類組合最常見的文讀韻母；其大寫及標「文」的條目標出文讀音。由於它大量取材自十五音系統，所以不算罕用字的獨立佐證。
+- **小川尚義. 1931-32. 臺日大辭典.** 臺北：臺灣總督府 [unchecked]。臺譯與編輯：林俊育，由 ChhoeTaigi 釋出（「台日大辭典 台譯版」）。[3,481；90] 1930 年代記錄的臺灣讀音，也是十五音系統以外、罕用字的佐證。
+- **教育部. 2011-. 臺灣閩南語常用詞辭典.** 臺北：教育部。https://sutian.moe.edu.tw/ 。[3,744；117] 當代臺灣讀音；其（文）標記用來區分文白，也是十五音系統以外、罕用字的佐證。
+- **維基詞典貢獻者. 閩南語與潮州話發音段落**，單字條目（Wiktextract 傾印檔 JSON 擷取）。https://en.wiktionary.org/ ；擷取工具：https://github.com/tatuylonen/wiktextract 。[閩南語 6,171；151] 填補空缺，並提供大部分的潮州話證據。它常抄錄甘字典，所以歸入十五音系統。
 
 ### 歷史閩南語
 
-- **謝秀嵐. 1818. 彙集雅俗通十五音.**（漳州韻書）[unchecked]。所用數位化：AlanJui, ho-lok-ue-tools, https://github.com/AlanJui/ho-lok-ue-tools 。[9,646；179] 漳州文讀韻母：其姜字母是陽韻 *iang* 的依據，箴字母是侵韻莊組 *om* 的依據。
+- **謝秀嵐. 1818. 彙集雅俗通十五音.**（漳州十五音韻書，四個來源之一）[unchecked]。所用數位化：AlanJui, ho-lok-ue-tools, https://github.com/AlanJui/ho-lok-ue-tools 。[9,646；179] 漳州文讀韻母：其姜字母是陽韻 *iang* 的依據，箴字母是侵韻莊組 *om* 的依據。
 - **Douglas, Carstairs. 1873. Chinese-English Dictionary of the Vernacular or Spoken Language of Amoy.** London: Trübner & Co.（已核對：HathiTrust https://catalog.hathitrust.org/Record/001774286 ）。補編：Thomas Barclay，上海：商務印書館，1923。影印重印本：臺北：南天書局，1990，ISBN 957-9482-32-2；臺北：古亭書屋，1970。所用數位化：Community-Min-Language-Rime, Hokkien/Dictionary/Amoy.csv, https://github.com/Language-Preservation-Community/Community-Min-Language-Rime 。[3,815 字，其中 2,699 字有標「R.」的讀音；83] 以「R.」標示的廈門讀書音，用來區分文白。它與雅俗通、Medhurst 一同顯示：灰韻在端組、精組、來母後讀 *ui*（對 tùi、推 thui、雷 lûi）。
-- **Medhurst, Walter Henry. 1832. A Dictionary of the Hok-këèn Dialect of the Chinese Language, according to the Reading and Colloquial Idioms.** Macao: Honorable East India Company's Press, by G. J. Steyn and Brother。各書目記書名頁年份為 1832；其中一筆紀錄的內文作 1837，即 MCPDict 所用年份。https://china-bibliographie.univie.ac.at/2010/04/17/medhurst-dictionary/ 。經 MCPDict「1837漳浦」表使用。[9,262 字，其中 1,115 字標為文讀；173] 漳浦讀音，是 *iang* 的證據之一。它依十五音編排，所以歸入韻書系統。
-- **Chirino, Pedro. 1604. Dictionarium Sino-Hispanicum.** 馬尼拉；手稿，羅馬 Biblioteca Angelica, Ms. 60（參見 Klöter 對馬尼拉文獻的綜述：https://www.benjamins.com/online/hl/articles/hl.00170.doh ）。經 MCPDict「1604馬尼拉漳州」表使用，僅憑年代認定為此書。並非後來的匿名《Dictionario Hispanico Sinicum》（約 1626–46，藏聖托馬斯大學）。[3,392；79] 最早的紀錄：馬尼拉的漳州話。它獨立於韻書之外，也是 *iang* 的證據之一。
-- **Macgowan, John. 1883. English and Chinese Dictionary of the Amoy Dialect.** Amoy: London Missionary Society [出版者：unchecked；作者與年份：SOAS 紀錄 https://library.soas.ac.uk/Record/PCE.FMC.3.03.01 ]。經 MCPDict「1883厦門（英厦辭典）」表使用。[2,896；65] 十九世紀的廈門話，獨立於韻書之外。
-- **黃謙. 1800. 彙音妙悟.**（泉州韻書）[unchecked]。未使用機讀副本，內容經由下列洪 1996 讀取。它是設計中的泉州一方：書中把「母、某、謀、牟」放在與侯韻同屬的鉤韻，支持明母侯韻同樣讀 *io*；又把登／庚二／耕分開讀 *irng*。我們曾試過 *irng* 的選項，後來移除，因為幾乎沒有人這樣讀，而且吻合度降低 2 個百分點。
+- **Medhurst, Walter Henry. 1832. A Dictionary of the Hok-këèn Dialect of the Chinese Language, according to the Reading and Colloquial Idioms.** Macao: Honorable East India Company's Press, by G. J. Steyn and Brother。各書目記書名頁年份為 1832；其中一筆紀錄的內文作 1837，即 MCPDict 所用年份。https://china-bibliographie.univie.ac.at/2010/04/17/medhurst-dictionary/ 。經 MCPDict「1837漳浦」表使用。[9,262 字，其中 1,115 字標為文讀；173] 漳浦讀音，是 *iang* 的證據之一。它依十五音編排，所以歸入十五音系統。
+- **Chirino, Pedro. 1604. Dictionarium Sino-Hispanicum.** 馬尼拉；手稿，羅馬 Biblioteca Angelica, Ms. 60（參見 Klöter 對馬尼拉文獻的綜述：https://www.benjamins.com/online/hl/articles/hl.00170.doh ）。經 MCPDict「1604馬尼拉漳州」表使用，僅憑年代認定為此書。並非後來的匿名《Dictionario Hispanico Sinicum》（約 1626–46，藏聖托馬斯大學）。[3,392；79] 最早的紀錄：馬尼拉的漳州話。它在十五音系統之外，也是 *iang* 的證據之一。
+- **Macgowan, John. 1883. English and Chinese Dictionary of the Amoy Dialect.** Amoy: London Missionary Society [出版者：unchecked；作者與年份：SOAS 紀錄 https://library.soas.ac.uk/Record/PCE.FMC.3.03.01 ]。經 MCPDict「1883厦門（英厦辭典）」表使用。[2,896；65] 十九世紀的廈門話，在十五音系統之外。
+- **黃謙. 1800. 彙音妙悟.**（泉州韻書，不屬十五音系統）[unchecked]。未使用機讀副本，內容經由下列洪 1996 讀取。它是設計中的泉州一方：書中把「母、某、謀、牟」放在與侯韻同屬的鉤韻，支持明母侯韻同樣讀 *io*；又把登／庚二／耕分開讀 *irng*。我們曾試過 *irng* 的選項，後來移除，因為幾乎沒有人這樣讀，而且吻合度降低 2 個百分點。
 
 ### 現代調查表
 

@@ -32,7 +32,7 @@ No single Hokkien variety keeps every distinction Middle Chinese had, but betwee
 | 日母 *j* vs 來母 *l* | Zhangzhou, Penang | 人 jîn ≠ 鄰 lîn |
 | 全濁上 tone 6 vs tone 7 | Lukang, Quanzhou, Nan'an, Hui'an | 是 sǐ ≠ 示 sī |
 | 灰韻 *oe* vs 微韻 *ui* | Zhangzhou, Quanzhou | 灰 hoe ≠ 揮 hui |
-| 侵韻 莊組 *om* vs 侵韻 *im* | both rime books (箴 字母) | 森 som ≠ 心 sim |
+| 侵韻 莊組 *om* vs 侵韻 *im* | 雅俗通 and 彙音妙悟 (箴 字母) | 森 som ≠ 心 sim |
 
 Across the 3,804 小韻 this gives 1,759 distinct syllables. An earlier, Amoy-based version of the script gave 1,396. The result is not any one real dialect, and it is not a reconstruction of a single historical layer, since the varieties did not borrow their literary readings as one system (楊秀芳 1982). Still, every distinction it makes is one that real speakers make somewhere.
 
@@ -53,6 +53,17 @@ Notes:
 - "Most common" means by classical-Chinese frequency.
 - Characters with more than one 廣韻 reading (不, 大, 長, 行) aren't scored, because which reading is right depends on context. The single-reading characters that are scored make up 71% of running text.
 - The exception list was chosen from the same data, so the second row is in-sample. To test the rules on characters they had not seen, the generated finals table was rebuilt from half the characters and scored on the other half. It scored 86.1% (all), 96.1% (1,000 most common) and 89.0% (3,000 most common), against 85.6% on the half it was built from, so the generated table isn't overfitted.
+
+## The 十五音 tradition
+
+Four of the sources come from one family of rime books, the 十五音 system of Zhangzhou and Amoy. This README calls that family the **十五音 tradition** (the "rime-book tradition"):
+
+- 彙集雅俗通十五音 (謝秀嵐, 1818), a Zhangzhou rime book
+- Medhurst's Hok-këèn dictionary (1832; the 1837 Zhangpu table), arranged on the 十五音
+- 廈門音新字典 ("甘字典", Campbell, 1913), built on the same system
+- Wiktionary, which often copies 甘字典
+
+A reading that only these four give does not count as independent evidence, however many of them agree. The sources outside the family are Douglas (1873), Macgowan (1883), the 1604 Manila record, 臺日大辭典, 教育部, and the modern surveys. 彙音妙悟 is a separate Quanzhou tradition and is not counted in it.
 
 ## What the exception list fixes
 
@@ -86,9 +97,9 @@ Almost all of the remaining misses are rare characters. Part of that is the rule
 - **Read as the character it stands in for.** 寔 "truly" (常職切, so se̍k) is recorded as si̍t, the reading of 實. 寘 "to place" (支義切, so chì) is recorded as tì, the reading of 置. 沖 (直弓切, so tiông) is recorded as chhiong, the reading of 衝, with which it is often interchanged.
 - **Mosaic finals that no source records for that character.** 152 of the 882 misses use one of the mosaic finals (ir, irn, iang, io, om) on a character recorded only in varieties that merge it. For example, 姤 gives kiò, and the sources record kò͘.
 
-The evidence for rare characters is also thin. Among rare characters that miss, 72% are attested only in the rime-book tradition: 雅俗通, Medhurst (which is arranged on the 十五音), and 甘字典 and Wiktionary, which largely follow them. Among rare characters that match, the figure is 51%. And 45% of the rare misses have just one source, against 23% of the rare matches.
+The evidence for rare characters is also thin. Among rare characters that miss, 72% are attested only in the 十五音 tradition: 雅俗通, Medhurst (which is arranged on the 十五音), and 甘字典 and Wiktionary, which largely follow them. Among rare characters that match, the figure is 51%. And 45% of the rare misses have just one source, against 23% of the rare matches.
 
-That is why the exception list is strict for rare characters. Outside the 3,000 most common, a character gets an exception only if its reading is attested outside the rime-book tradition: in the MOE dictionary, 臺日大辭典, Douglas, Macgowan, the 1604 Manila record or a modern survey. Every row was then reviewed by hand. Colloquial words written with a rare character (尪 ang), Mandarin-shaped readings (傻 sa) and variants of characters the rules already handle (猪 = 豬) were dropped. Otherwise the 反切 reading stands. For a character you will rarely hear read aloud, a reading that fits the system is a better guess than one a rime book may itself have guessed.
+That is why the exception list is strict for rare characters. Outside the 3,000 most common, a character gets an exception only if its reading is attested outside the 十五音 tradition: in the MOE dictionary, 臺日大辭典, Douglas, Macgowan, the 1604 Manila record or a modern survey. Every row was then reviewed by hand. Colloquial words written with a rare character (尪 ang), Mandarin-shaped readings (傻 sa) and variants of characters the rules already handle (猪 = 豬) were dropped. Otherwise the 反切 reading stands. For a character you will rarely hear read aloud, a reading that fits the system is a better guess than one one of the 十五音 books may itself have guessed.
 
 ## Using it
 
@@ -119,19 +130,19 @@ The figures in brackets are how many characters a source has readings for, and h
 
 ### Hokkien dictionaries (via the [ChhoeTaigi database](https://github.com/ChhoeTaigi/ChhoeTaigiDatabase))
 
-- **Campbell, William (甘為霖). 1913. 廈門音新字典 ("甘字典").** Digitized and edited by 林俊育 (Lîm Chùn-io̍k). [11,163 characters; confirms 219 exception readings] This is the backbone. The generated finals table (177 rows) is the most common literary final in 甘字典 for each combination of 韻, 呼, 等 and 類. Its capitalized and 文 entries mark the literary readings. It draws heavily on the rime-book tradition, so it doesn't count as independent support for a rare character.
-- **小川尚義. 1931-32. 臺日大辭典.** 臺北: 臺灣總督府 [unchecked]. Taigi translation and editing by 林俊育, as distributed by ChhoeTaigi ("台日大辭典 台譯版"). [3,481; 90] Taiwanese readings as recorded in the 1930s, and independent support for rare characters.
-- **教育部. 2011-. 臺灣閩南語常用詞辭典.** 臺北: 教育部. https://sutian.moe.edu.tw/ . [3,744; 117] Present-day Taiwanese readings. Its (文) marks tell literary from colloquial, and it is independent support for rare characters.
-- **Wiktionary contributors. Hokkien and Teochew pronunciation sections**, single-character entries (Wiktextract JSON extract of the dump). https://en.wiktionary.org/ ; extractor: https://github.com/tatuylonen/wiktextract . [6,171 Hokkien; 151] Fills gaps and supplies most of the Teochew evidence. It often copies 甘字典, so it is counted with the rime-book tradition.
+- **Campbell, William (甘為霖). 1913. 廈門音新字典 ("甘字典").** Digitized and edited by 林俊育 (Lîm Chùn-io̍k). [11,163 characters; confirms 219 exception readings] This is the backbone. The generated finals table (177 rows) is the most common literary final in 甘字典 for each combination of 韻, 呼, 等 and 類. Its capitalized and 文 entries mark the literary readings. It draws heavily on the 十五音 tradition, so it doesn't count as independent support for a rare character.
+- **小川尚義. 1931-32. 臺日大辭典.** 臺北: 臺灣總督府 [unchecked]. Taigi translation and editing by 林俊育, as distributed by ChhoeTaigi ("台日大辭典 台譯版"). [3,481; 90] Taiwanese readings as recorded in the 1930s, and support for rare characters from outside the 十五音 tradition.
+- **教育部. 2011-. 臺灣閩南語常用詞辭典.** 臺北: 教育部. https://sutian.moe.edu.tw/ . [3,744; 117] Present-day Taiwanese readings. Its (文) marks tell literary from colloquial, and it is support for rare characters from outside the 十五音 tradition.
+- **Wiktionary contributors. Hokkien and Teochew pronunciation sections**, single-character entries (Wiktextract JSON extract of the dump). https://en.wiktionary.org/ ; extractor: https://github.com/tatuylonen/wiktextract . [6,171 Hokkien; 151] Fills gaps and supplies most of the Teochew evidence. It often copies 甘字典, so it is counted with the 十五音 tradition.
 
 ### Historic Hokkien
 
-- **謝秀嵐. 1818. 彙集雅俗通十五音.** (Zhangzhou rime book) [unchecked]. Digitization used: AlanJui, ho-lok-ue-tools, https://github.com/AlanJui/ho-lok-ue-tools . [9,646; 179] The Zhangzhou literary finals: its 姜 字母 is the source of 陽韻 *iang*, and its 箴 字母 of 侵韻 莊組 *om*.
+- **謝秀嵐. 1818. 彙集雅俗通十五音.** (Zhangzhou 十五音 rime book; one of the four sources above) [unchecked]. Digitization used: AlanJui, ho-lok-ue-tools, https://github.com/AlanJui/ho-lok-ue-tools . [9,646; 179] The Zhangzhou literary finals: its 姜 字母 is the source of 陽韻 *iang*, and its 箴 字母 of 侵韻 莊組 *om*.
 - **Douglas, Carstairs. 1873. Chinese-English Dictionary of the Vernacular or Spoken Language of Amoy.** London: Trübner & Co. (checked: HathiTrust https://catalog.hathitrust.org/Record/001774286 ). Supplement by Thomas Barclay, Shanghai: Commercial Press, 1923. Facsimile reprints: 臺北: 南天書局, 1990, ISBN 957-9482-32-2; 臺北: 古亭書屋, 1970. Digitization used: Community-Min-Language-Rime, Hokkien/Dictionary/Amoy.csv, https://github.com/Language-Preservation-Community/Community-Min-Language-Rime . [3,815, of which 2,699 have readings marked "R."; 83] Amoy reading pronunciations, marked "R.", which tell literary from colloquial. With 雅俗通 and Medhurst, it shows that 灰韻 after 端組, 精組 and 來母 is *ui* (對 tùi, 推 thui, 雷 lûi).
-- **Medhurst, Walter Henry. 1832. A Dictionary of the Hok-këèn Dialect of the Chinese Language, according to the Reading and Colloquial Idioms.** Macao: Honorable East India Company's Press, by G. J. Steyn and Brother. Catalogues give 1832 on the title page; one record's text says 1837, the date MCPDict uses. https://china-bibliographie.univie.ac.at/2010/04/17/medhurst-dictionary/ . Used through the MCPDict table "1837漳浦". [9,262, of which 1,115 are marked literary; 173] Zhangpu readings, evidence for *iang*. It is arranged on the 十五音, so it is counted with the rime-book tradition.
-- **Chirino, Pedro. 1604. Dictionarium Sino-Hispanicum.** Manila; manuscript, Biblioteca Angelica, Rome, Ms. 60 (see Klöter's survey of the Manila sources: https://www.benjamins.com/online/hl/articles/hl.00170.doh ). Used through the MCPDict table "1604馬尼拉漳州", identified with this work by its date. This is not the later anonymous Dictionario Hispanico Sinicum (c. 1626-46, University of Santo Tomas). [3,392; 79] The oldest record, Zhangzhou speech in Manila. It is independent of the rime books and is evidence for *iang*.
-- **Macgowan, John. 1883. English and Chinese Dictionary of the Amoy Dialect.** Amoy: London Missionary Society [publisher: unchecked; author and year: SOAS record https://library.soas.ac.uk/Record/PCE.FMC.3.03.01 ]. Used through the MCPDict table "1883厦門（英厦辭典）". [2,896; 65] Nineteenth-century Amoy, independent of the rime books.
-- **黃謙. 1800. 彙音妙悟.** (Quanzhou rime book) [unchecked]. No machine-readable copy was used; it was read through 洪 1996 below. It is the Quanzhou side of the design. It puts 母 某 謀 牟 in the 鉤 rime with 侯韻, which supports giving 明母 侯韻 the same *io*, and it keeps 登/庚二/耕 apart as *irng*. An option for *irng* was tried and removed, because almost no one reads it that way and it cost 2 points of agreement.
+- **Medhurst, Walter Henry. 1832. A Dictionary of the Hok-këèn Dialect of the Chinese Language, according to the Reading and Colloquial Idioms.** Macao: Honorable East India Company's Press, by G. J. Steyn and Brother. Catalogues give 1832 on the title page; one record's text says 1837, the date MCPDict uses. https://china-bibliographie.univie.ac.at/2010/04/17/medhurst-dictionary/ . Used through the MCPDict table "1837漳浦". [9,262, of which 1,115 are marked literary; 173] Zhangpu readings, evidence for *iang*. It is arranged on the 十五音, so it is counted with the 十五音 tradition.
+- **Chirino, Pedro. 1604. Dictionarium Sino-Hispanicum.** Manila; manuscript, Biblioteca Angelica, Rome, Ms. 60 (see Klöter's survey of the Manila sources: https://www.benjamins.com/online/hl/articles/hl.00170.doh ). Used through the MCPDict table "1604馬尼拉漳州", identified with this work by its date. This is not the later anonymous Dictionario Hispanico Sinicum (c. 1626-46, University of Santo Tomas). [3,392; 79] The oldest record, Zhangzhou speech in Manila. It is outside the 十五音 tradition and is evidence for *iang*.
+- **Macgowan, John. 1883. English and Chinese Dictionary of the Amoy Dialect.** Amoy: London Missionary Society [publisher: unchecked; author and year: SOAS record https://library.soas.ac.uk/Record/PCE.FMC.3.03.01 ]. Used through the MCPDict table "1883厦門（英厦辭典）". [2,896; 65] Nineteenth-century Amoy, outside the 十五音 tradition.
+- **黃謙. 1800. 彙音妙悟.** (Quanzhou rime book; a separate tradition from the 十五音) [unchecked]. No machine-readable copy was used; it was read through 洪 1996 below. It is the Quanzhou side of the design. It puts 母 某 謀 牟 in the 鉤 rime with 侯韻, which supports giving 明母 侯韻 the same *io*, and it keeps 登/庚二/耕 apart as *irng*. An option for *irng* was tried and removed, because almost no one reads it that way and it cost 2 points of agreement.
 
 ### Modern survey tables
 
