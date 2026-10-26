@@ -16,36 +16,7 @@
  *   輸出為白話字，含慣例擴充符號（o͘、ir、irn、eng/ek）。聲調一律取中古調類；全濁上為第六聲，以抑揚符標示（ǎ ě ǐ ǒ ǔ）。
  *   選項「例外」（預設開）套用例外表：約 216 字的規則輸出不是任何方言真有的音節，改用真實音節（不 put、大 tāi、頭 thiô）；
  *   需提供字頭，否則由規則決定。
- *
- * LICENSE
- *   MIT License. Copyright (c) 2026 樺修朙 (Maxim Klyashtornyy) and Claude (Anthropic).
- *   Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
- *   documentation files (the "Software"), to deal in the Software without restriction, including without limitation
- *   the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and
- *   to permit persons to whom the Software is furnished to do so, subject to the following conditions:
- *   The above copyright notice and this permission notice shall be included in all copies or substantial portions of
- *   the Software.
- *   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO
- *   THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- *   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
- *   TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- *   SOFTWARE.
- *   (The licence covers this script only. The source dictionaries and the MOE variant file keep their own terms.)
- *   〔中文參考譯文，僅供閱讀，以英文原文為準〕MIT 授權。版權所有 © 2026 樺修朙（Maxim Klyashtornyy）與 Claude（Anthropic）。
- *   茲免費授予任何取得本軟體及相關文件副本之人不受限制地處置本軟體之權利，包括但不限於使用、複製、修改、合併、出版、散布、
- *   再授權及／或販售本軟體副本，並允許獲提供本軟體之人如此行事，惟須符合下列條件：上述版權聲明與本許可聲明應包含於本軟體
- *   的所有副本或主要部分中。本軟體按「現狀」提供，不附帶任何明示或默示之擔保，包括但不限於適銷性、特定用途適用性及不侵權
- *   之擔保。在任何情況下，作者或版權持有人均不對因本軟體或其使用或其他處置而產生的任何索賠、損害或其他責任負責，不論
- *   基於合約、侵權或其他理由。（本授權僅涵蓋本腳本；所引用的辭典資料及教育部異體字檔案仍各依其自身條款。）
- *
- * CITE AS
- *   樺修朙 and Claude (Anthropic). 2026. Idealized literary (文讀) Hokkien in Pe̍h-ōe-jī, derived from Middle
- *   Chinese: a tshet-uinh deriver. Design rule, choice and supply of sources, and review: 樺修朙.
- *   Data analysis, rule writing, exception list and tests: Claude (Anthropic), run through Claude Code.
- *   〔引用格式〕樺修朙、Claude（Anthropic）。2026。《理想化閩南語文讀（白話字）：由中古漢語推導——tshet-uinh 推導腳本》。
- *   設計原則、材料選擇與提供、審閱：樺修朙。資料分析、規則撰寫、例外表與測試：Claude（Anthropic），透過 Claude Code 執行。
- */
-
+ 
 const is = (...x) => 音韻地位.屬於(...x);
 const when = (rules, name) => 音韻地位.判斷(rules, `${name}: 未涵蓋 ${音韻地位.描述}`);
 
