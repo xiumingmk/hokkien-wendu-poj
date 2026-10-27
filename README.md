@@ -67,7 +67,7 @@ A reading that only these four give does not count as independent evidence, howe
 
 ## What the exception list fixes
 
-The rules describe the regular pattern, but a couple of hundred characters, many of them common words, don't follow it. With the option **例外** on (the default), about 214 such characters (244 readings, plus 56 variant forms) get the syllable Hokkien really uses. An exception replaces only the initial and the final; the tone always stays the Middle Chinese class. Turn the option off to see the plain rule output.
+The rules describe the regular pattern, but a couple of hundred characters, many of them common words, don't follow it. With the option **例外** on (the default), about 214 such characters (242 readings, plus 56 variant forms) get the syllable Hokkien really uses. An exception replaces only the initial and the final; the tone always stays the Middle Chinese class. Turn the option off to see the plain rule output.
 
 | Character | 反切 | Rules give | With 例外 | Why the rules miss |
 |---|---|---|---|---|
