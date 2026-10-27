@@ -10,11 +10,11 @@
  *   A Middle Chinese contrast is kept if at least one reference variety keeps it (Amoy, Taiwanese, Zhangzhou,
  *   Quanzhou, Penang; Lukang for tone 6), and never invented otherwise. Output is POJ with the usual extensions
  *   (o͘, ir, irn, eng/ek). The tone is always the Middle Chinese class; 全濁上 is tone 6, written with a caron
- *   (ǎ ě ǐ ǒ ǔ). Option 例外 (on by default) applies the exception list: about 216 characters whose rule output is
+ *   (ǎ ě ǐ ǒ ǔ). Option 例外 (on by default) applies the exception list: about 214 characters whose rule output is
  *   not a syllable any variety has get a real one (不 put, 大 tāi, 頭 thiô). It needs the 字頭; without it the rules decide.
  *   〔簡述〕只要有任何一個參照方言（廈門、臺灣、漳州、泉州、檳城；第六聲另據鹿港）保留某個中古對立，就保留；絕不憑空創造。
  *   輸出為白話字，含慣例擴充符號（o͘、ir、irn、eng/ek）。聲調一律取中古調類；全濁上為第六聲，以抑揚符標示（ǎ ě ǐ ǒ ǔ）。
- *   選項「例外」（預設開）套用例外表：約 216 字的規則輸出不是任何方言真有的音節，改用真實音節（不 put、大 tāi、頭 thiô）；
+ *   選項「例外」（預設開）套用例外表：約 214 字的規則輸出不是任何方言真有的音節，改用真實音節（不 put、大 tāi、頭 thiô）；
  *   需提供字頭，否則由規則決定。
  */
 
@@ -530,7 +530,6 @@ const 例外 = [
   ["退", "透合一灰去", "thoe"],  // thùi → thoe
   ["鳥鸟", "端開四蕭上", "niau"],  // tiáu → niau
   ["罷罢", "並二佳上", "pa"],  // pǎi → pa
-  ["著", "澄開三陽入", "tiok"],  // tia̍k → tiok
   ["頭头", "定一侯平", "thio"],  // tiô → thio
   ["隱", "影開三C殷上 影開三C殷去", "un"],  // írn/ìrn → un
   ["質质", "知開三脂去", "chi"],  // tì → chi
@@ -566,7 +565,6 @@ const 例外 = [
   ["熒", "匣合四青平", "eng"],  // hêng → eng
   ["鑿凿", "從一東入 從開一唐入", "chhok"],  // cho̍k → chhok
   ["苛", "匣開一歌平", "kho"],  // hô → kho
-  ["驪", "來開三支平", "le"],  // lî → le
   ["愁", "崇三尤平", "chhiu"],  // chhiô → chhiu
   ["慚惭慙", "從開一談平", "chham"],  // châm → chham
   ["牡", "明一侯上", "bo͘"],  // bió → bo͘
